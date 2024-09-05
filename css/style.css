@@ -1,0 +1,329 @@
+/* reset css: xóa các css định dạng mặc định của trình duyệt */
+/* selector *: chọn tất cả các phần tử trong html*/
+*{
+    /* padding là phần đệm từ viền phần tử đi vào nội dung */
+    padding: 0;
+    /* margin là phần đệm từ viền phần tử đi ngược ra phần tử khác */
+    margin: 0;
+    /* khi cần đẩy nội dung nhưng vẫn lấy nền thì background thì dùng padding, k thì dùng margin */
+    font-family: 'Roboto', sans-serif;
+    
+    /* chỉnh chữ nghiêng
+    font-style: italic; */
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf4f2;
+}
+
+.clear{
+    clear: both;
+}
+
+/* star header  */
+.header{
+    background-color: #f8e1db;
+
+    /* cách viết 4 loại riêng lẻ
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px; */
+
+    /* padding: 10px;
+     1 thông số: nó sẽ đẩy cả 4 cạnh trên dưới trái phải  */
+    
+     padding: 10px 40px;
+    /*  2 thông số: thông số đầu tiên áp dụng trên dưới, thông số thứ 2 áp dụng trái phải */
+    
+    /* padding: 20px 40px 10px;
+     3 thông số: trên - trái phải - dưới  */
+    
+     /* padding: 10px 20px 30px 40px;
+     4 thông số: trên phải dưới trái(theo chiều kim đồng hồ)  */
+}
+.header__navigation{
+    /* muốn xóa bỏ thuộc tính nào thì dùng none */
+    list-style: none;
+    margin-top: 10px;
+}
+.header__navigation li{
+    /* để li kéo nhau lên đứng thành 1 hàng dùng display: inline */
+    display: inline;
+    margin-right: 30px;
+    
+}
+
+/* dùng để chọn chính xác phần tử số mấy  */
+/* .header__navigation li:nth-child(3){
+    background-color: red;
+} */
+
+
+/* dùng để cho phần tử cuối cùng sát đoạn văn khi cần thiết, phần tử đầu tiên là first-child */
+/* .header__navigation li:last-child{
+    margin-right: 0;
+} */
+
+
+/* xóa gạch chân */
+.header__navigation li a{
+    text-decoration: none;
+    color: #3a3735;
+}
+
+/* end header */
+
+/* star carousel */
+.carousel {
+    height: 600px;
+    background-image: url(../img/BG.png);
+   
+   
+    background-size: cover;
+    /* chỉnh kích thước của background */
+   
+    background-repeat: no-repeat;
+    /* chỉnh background lặp lại(theo dọc ngang) */
+   
+    background-position: center;
+    /* chỉnh vị trí của background */
+}
+
+/* star .activities  */
+.activities{
+    padding: 50px 0;
+}
+
+.activities__title{
+    text-align: center;
+    color: #8d8d8d;
+}
+
+.activities__title span{
+    display: block;
+}
+
+.activities__list{
+    padding-top: 20px;
+
+}
+
+.activities__item{
+    /* float dùng dể kéo các phần tử lên cùng 1 hàng, số lượng phần tử trên 1 hàng phụ thuộc vào width của mỗi phần tử */
+    /* float luôn luôn đi chung với clear */
+    float: left;
+    width: 25%;
+    padding: 10px;
+
+}
+
+.activities__inner{
+    padding: 30px;
+    text-align: center;
+
+}
+.activities__inner h4{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.activities__inner p{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #8d8d8d;
+    /* line-height: tạo khoảng cách giữa các dòng. đơn vị là số tự nhiên, thập phân và px */
+    /* cách tính line-height: line-height / font-size */
+    line-height: 1.7;
+}
+.activities__inner button{
+    
+    width: 160px;
+    border-radius: 19px;
+    color: #8d8d8d;
+    margin-top: 20px;
+    border: none;
+    background-color: #e8e8e8;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.activities__img{
+    position: relative;
+}
+
+.activities__img img{
+    width: 100%;
+    
+    border-radius:10%;
+}
+
+.activities__icon{
+    width: 30px;
+    height: 30px;
+
+    /* mã màu mới:rgba(red ,green ,blue ,alpha )
+    hệ số alpha hoạt động tương tự như opacity */
+    background-color: rgba(255, 255, 255, 0.5);
+
+    /* position absolute sẽ canh theo thằng cha có position relative gần nó nhất */
+    position: absolute;
+    
+    top: 20px;
+    right: 20px;
+
+    /* z-index: chỉ số xác định thứ tự html */
+    
+    border-radius: 30%;
+
+    /* thuộc tính opacity: làm cho thẻ có độ trong suốt, giá trị từ 0->1 */
+    /* opacity: 0.5; */
+}
+
+.activities__icon i{
+    /* canh giữa icon(do height ở icon đang để 30 nên dưới line-height là 30) */
+    line-height: 30px;
+    color: #e76f51;
+    
+}
+
+
+.activities__button button{
+    
+    width: 160px;
+    background-color: transparent;
+    border:1px solid #eb846b;
+    padding: 10px;
+    color: #eb846b;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+
+    /* tạo icon khi rê chuột vào */
+    cursor: pointer;
+}
+
+/* thay đổi trạng thái css khi rê chuột vào:hover */
+.activities__button button:hover{
+    background-color: #eb846b;
+    color: #faf4f2;
+}
+
+/* end .activities */
+
+/* star contact */
+
+.contact{
+    background-color: #f8e1db;
+    
+}
+.contact__right,.contact__left{
+    width: 50%;
+    float: left;
+}
+
+.contact__left{
+    background: url(../img/mask.png) no-repeat center / cover ;
+    padding-left: 8%;
+}
+
+
+.contact__right h3{
+    color: #8d8d8d;
+    padding: 70px 0 0 6%;
+    font-size: 25px;
+    
+}
+.contact__right p{
+    color: #bbb1af;
+    font-size: 15px;
+    padding: 10px 0 0 6%;
+    
+}
+
+.contact__app,.contact__social{
+    width: 50%;
+    float: left;
+    padding-top: 30px;
+    color: #9e9a99;
+    font-size: 18px;
+}
+
+
+.contact__app{
+    padding-left: 6%;
+}
+.contact__app img{
+    padding-top: 20px;
+}
+
+.contact__social i{
+    color: #e76f51;
+    padding: 20px 10px 0 0;
+    font-size: 25px;
+    
+}
+
+.footer{
+    background-color: #f8e1db;
+    margin-top: 100px;
+    width: 100%;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+.footer__left{
+    width: 40%;
+    
+}
+.footer__right{
+    width: 60%;
+    
+}
+.footer__left,.footer__right{
+    float: left;
+    padding: 100px 0 0 40px;
+    
+}
+.footer__left p{
+    font-size: 15px;
+    padding: 20px 5px 0 0;
+    line-height: 1.8;
+    color: #504b48;
+}
+.footer__left h3{
+    color: #3a3735;
+    font-size: 18px;
+}
+
+.footer__col{
+    float: left;
+    width: 33%;
+    
+    line-height: 1.8;
+}
+.footer__col li,a{
+    list-style: none;
+    text-decoration: none;
+    
+}
+.footer__col h3{
+    font-size: 18px;
+    color: #3a3735;
+}
+.footer__col a{
+    color: #504b48;
+    font-size: 15px;
+}
+.footer__copyright{
+    color: #504b48;
+    text-align: center;
+    font-size: 15px;
+    padding: 40px 0 60px 0;
+}
+
+
+
+
+
